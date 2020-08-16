@@ -13,6 +13,7 @@
     const message = document.querySelector(".message");
     const score = document.querySelector(".score");
     const buttons = document.querySelectorAll("button")
+    let winner = [0,0]
     
     for(let i=0; i<buttons.length; i++) {
       buttons[i].addEventListener("click", playGame);
@@ -29,6 +30,14 @@
         computerSelection = "Scissors";
       }
       let result = checkWinner(playerSelection, computerSelection);
+      if(result === "Player") {
+        result += "wins!";
+        winner[0]++;
+      } else if (result === "Computer") {
+        result += "wins!";
+        winner[1]++;
+      }
+      score.innerHTML = "Player 1 ["+winner[0]+"] Player 2 ["+winner[1]+"]";
     }
 
     function checkWinner(player, computer) {
@@ -37,6 +46,20 @@
         }
         if(player === "Rock"){
           if(computer === "Paper") {
+            return "Computer"
+          } else {
+            return "Player"
+          }
+        }
+        if(player === "Paper") {
+          if(computer === "Scissors") {
+            return "Computer"
+          } else {
+            return "Player"
+          }
+        }
+        if(player === "Scissors") {
+          if(computer === "Rock") {
             return "Computer"
           } else {
             return "Player"
