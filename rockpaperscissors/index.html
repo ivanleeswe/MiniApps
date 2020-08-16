@@ -30,5 +30,18 @@
       }
       let result = checkWinner(playerSelection, computerSelection);
     }
+
+    function checkWinner(player, computer) {
+        if(player === computer) {
+          return "Draw"
+        }
+        if(player === "Rock"){
+          if(computer === "Paper") {
+            return "Computer"
+          } else {
+            return "Player"
+          }
+        }
+      }
   </script>
 </html>
