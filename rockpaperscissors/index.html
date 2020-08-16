@@ -31,13 +31,20 @@
       }
       let result = checkWinner(playerSelection, computerSelection);
       if(result === "Player") {
-        result += "wins!";
+        result += " wins!";
         winner[0]++;
       } else if (result === "Computer") {
-        result += "wins!";
+        result += " wins!";
         winner[1]++;
+      } else {
+        result += " results in a tie match"
       }
       score.innerHTML = "Player 1 ["+winner[0]+"] Player 2 ["+winner[1]+"]";
+      messager(playerSelection + " vs " + computerSelection + "<br><b>" + result +"</b>")
+    }
+
+    function messager(msg) {
+      message.innerHTML = msg;
     }
 
     function checkWinner(player, computer) {
