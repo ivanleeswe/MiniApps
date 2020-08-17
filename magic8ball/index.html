@@ -4,14 +4,21 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="message">Ask your question</div>
+    <div>Ask your question?</div>
     <input type="text" placeholder="question">
     <button type="button">Ask</button>
+    <div class="message"></div>
 
     <script>
+      const answerArr = ["It will work", "Maybe maybe not", "Probably Not", "Highly Likely", "I don't know"];
       const message = document.querySelector('.message');
       const question = document.querySelector('input');
       const button = document.querySelector('button');
+      button.addEventListener("click", function() {
+        let res = Math.floor(Math.random()*answerArr.length);
+        message.innerText = question.value + " "+ answerArr[res];
+        question.value = "";
+      })
     </script>
   </body>
 </html>
