@@ -27,5 +27,19 @@ $(document).ready(function(){
       $('#board li').removeClass('disable');
       $('#board li').removeClass('o');
       $('#board li').removeClass('x');
+    } else if (spot1.hasClass('x') && spot2.hasClass('x') && spot3.hasClass('x') || //if row of X
+    spot4.hasClass('x') && spot5.hasClass('x') && spot6.hasClass('x') ||
+    spot7.hasClass('x') && spot8.hasClass('x') && spot9.hasClass('x') ||
+    spot1.hasClass('x') && spot4.hasClass('x') && spot7.hasClass('x') ||
+    spot2.hasClass('x') && spot5.hasClass('x') && spot8.hasClass('x') ||
+    spot3.hasClass('x') && spot6.hasClass('x') && spot9.hasClass('x') ||
+    spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
+    spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x') 
+    ){
+      alert("Winner: X") //announce winner X, clear board 
+      $('#board li').text('+');
+      $('#board li').removeClass('disable');
+      $('#board li').removeClass('o');
+      $('#board li').removeClass('x');
     } 
 })
