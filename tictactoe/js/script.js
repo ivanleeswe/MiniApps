@@ -50,5 +50,21 @@ $(document).ready(function(){
       turns = 0;
     } else if ($(this).hasClass('disable')){//if tile have disable, announce spot filled
       alert('Spot filled');
+    } else if (turns%2 === 0){ // if turns is even number, turns counter increase by 1
+      turns ++;
+      $(this).text(o); //Show's O
+      $(this).addClass('disable o');//disable this box
+      if(spot1.hasClass('o') && spot2.hasClass('o') && spot3.hasClass('o') ||
+    spot4.hasClass('o') && spot5.hasClass('o') && spot6.hasClass('o') ||
+    spot7.hasClass('o') && spot8.hasClass('o') && spot9.hasClass('o') ||
+    spot1.hasClass('o') && spot4.hasClass('o') && spot7.hasClass('o') ||
+    spot2.hasClass('o') && spot5.hasClass('o') && spot8.hasClass('o') ||
+    spot3.hasClass('o') && spot6.hasClass('o') && spot9.hasClass('o') ||
+    spot1.hasClass('o') && spot5.hasClass('o') && spot9.hasClass('o') ||
+    spot3.hasClass('o') && spot5.hasClass('o') && spot7.hasClass('o') 
+     ){
+       alert('Winner: O');
+      turns = 0;
+     }
     } 
 })
