@@ -84,4 +84,12 @@ $(document).ready(function(){
       }
       }
       });
+      //Reset button
+      $('#reset').on('click',function(){
+        $('#board li').text('+');
+        $('#board li').removeClass('disable');
+        $('#board li').removeClass('o');
+        $('#board li').removeClass('x');
+        turns = 0;
+      })
 })
