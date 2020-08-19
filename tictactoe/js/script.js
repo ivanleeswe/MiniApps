@@ -66,5 +66,22 @@ $(document).ready(function(){
        alert('Winner: O');
       turns = 0;
      }
-    } 
+    } else { // if turns is odd number, turns counter increase by 1
+      turns++;
+      $(this).text(x);  //Show's X
+      $(this).addClass('disable x');// disable this box
+      if(spot1.hasClass('x') && spot2.hasClass('x') && spot3.hasClass('x') ||
+      spot4.hasClass('x') && spot5.hasClass('x') && spot6.hasClass('x') ||
+      spot7.hasClass('x') && spot8.hasClass('x') && spot9.hasClass('x') ||
+      spot1.hasClass('x') && spot4.hasClass('x') && spot7.hasClass('x') ||
+      spot2.hasClass('x') && spot5.hasClass('x') && spot8.hasClass('x') ||
+      spot3.hasClass('x') && spot6.hasClass('x') && spot9.hasClass('x') ||
+      spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
+      spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x') 
+      ){
+        alert('Winner: X');
+        turns = 0;
+      }
+      }
+      });
 })
