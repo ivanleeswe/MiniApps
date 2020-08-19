@@ -41,5 +41,14 @@ $(document).ready(function(){
       $('#board li').removeClass('disable');
       $('#board li').removeClass('o');
       $('#board li').removeClass('x');
+    } else if (turns === 9){ //if number of turns is 9, announce tie game, clear board, turn counter back to zero
+      alert("Tie Game")
+      $('#board li').text('+');
+      $('#board li').removeClass('disable');
+      $('#board li').removeClass('o');
+      $('#board li').removeClass('x');
+      turns = 0;
+    } else if ($(this).hasClass('disable')){//if tile have disable, announce spot filled
+      alert('Spot filled');
     } 
 })
